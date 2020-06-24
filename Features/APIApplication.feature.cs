@@ -103,7 +103,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given("I have a endpoint /api/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a endpoint api/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
  testRunner.When("I call get method of api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -117,7 +117,7 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get user information using userid")]
-        [NUnit.Framework.TestCaseAttribute("ditto", null)]
+        [NUnit.Framework.TestCaseAttribute("1", null)]
         public virtual void GetUserInformationUsingUserid(string userid, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -145,7 +145,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 11
- testRunner.Given("I have a endpoint /api/v2/pokemon/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a endpoint posts/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 12
  testRunner.When(string.Format("I call get method to get user information using {0}", userid), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -188,7 +188,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 21
- testRunner.Given("I have a endpoint /api/v2/pokemon/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a endpoint v2/pokemon/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 22
  testRunner.When(string.Format("I call get method to get user account information using {0} and {1}", userid, accountNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -228,7 +228,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 30
- testRunner.Given("I have a endpoint /api/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a endpoint posts/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 31
  testRunner.When("I call a post method to register a user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

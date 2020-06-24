@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,13 +15,14 @@ namespace APIAutomationTestSuite
         public static RestClient client;
         public static RestRequest restRequest;
         //public static string baseURL ="http://mydomain.com";
-        public static string baseURL = "https://reqres.in/";
+        //public static string baseURL = "https://reqres.in/";
         //public static string baseURL = "https://pokeapi.co/api/"; // v2/pokemon/ditto
+        public static string baseURL = "https://jsonplaceholder.typicode.com/";
         public static RestClient SetUrl(string endpoint)
         {
-            //string url = Path.Combine(baseURL, endpoint); // Only Return /endpoint/
-            string url = baseURL + endpoint;
-            Debug.Write(url);
+            string url = Path.Combine(baseURL, endpoint); // Only Return /endpoint/
+            //string url = baseURL + endpoint;
+            Debug.Write(url+"\n");
             return client = new RestClient(url);
         }
 
@@ -50,14 +52,15 @@ namespace APIAutomationTestSuite
 
         public static RestRequest CreatePostRequest()
         {
-            var userInfo = new UserInformation();
-            userInfo.first_name = "Tej";
-            userInfo.last_name = "Pal";
-            userInfo.email = "Tej@mail.com";
+            var userInfo = new Post();
+            userInfo.userId = 2;
+            userInfo.title = "Pal";
+            userInfo.body = "Tej@mail.com";
 
-            var resource = "/users/";
+            var resource = "";
             restRequest = new RestRequest(resource, Method.POST);
-            restRequest.AddBody(userInfo);
+            restRequest.AddJsonBody(userInfo);
+            //restRequest.AddBody(userInfo);
             restRequest.AddHeader("Accept", "application/json");
             return restRequest;
         }

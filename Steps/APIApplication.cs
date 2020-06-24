@@ -43,7 +43,7 @@ namespace APIAutomationTestSuite.Steps
         public void ThenIWillGetUserInformation()
         {
             var response = RestApiHelper.GetResponse();
-            Assert.That(response.StatusCode, Is.EqualTo(200), "User not Found");
+            Assert.That(response.StatusCode.ToString, Is.EqualTo("OK"), "Not Found");
         }
 
         //http://mydomain.com/userinformation/userid/AccountInformation?account={accountNumber}
@@ -70,7 +70,7 @@ namespace APIAutomationTestSuite.Steps
         public void ThenIWillRegiteredSuccesfully()
         {
             var response = RestApiHelper.GetResponse();
-            Assert.That(response.StatusCode, Is.EqualTo(201), "User is not registered");
+            Assert.That(response.StatusCode.ToString, Is.EqualTo("Created"), "User was not registered");
         }
 
 
