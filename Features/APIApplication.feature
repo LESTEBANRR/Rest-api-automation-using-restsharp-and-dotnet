@@ -25,3 +25,9 @@ Scenario Outline: Get user account information using userid and accountnumber
 Examples: User Info
 | userid   | accountNumber |
 | user1001 | 123456789     |
+
+Scenario Outline: User registration for given endpoint
+	Given I have a endpoint /user/
+	When I call a post method to register a user
+	Then I will regitered succesfully
+
