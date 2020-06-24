@@ -45,6 +45,19 @@ namespace APIAutomationTestSuite.Steps
             var response = RestApiHelper.GetResponse();
         }
 
+        //http://mydomain.com/userinformation/userid/AccountInformation?account={accountNumber}
+        [When(@"I call get method to get user account information using (.*) and (.*)")]
+        public void WhenICallGetMethodToGetUserAccountInformationUsingUserAnd(string userId, long accountNumber)
+        {
+            RestApiHelper.CreateRequest(userId, accountNumber);
+        }
+
+        [Then(@"I will get user account information")]
+        public void ThenIWillGetUserAccountInformation()
+        {
+            var response = RestApiHelper.GetResponse();
+        }
+
 
     }
 }
