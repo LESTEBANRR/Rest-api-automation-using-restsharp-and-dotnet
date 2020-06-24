@@ -32,7 +32,7 @@ namespace APIAutomationTestSuite.Steps
                 Assert.That(response.Content, Is.EqualTo(expected),"Error Message");
             }
         }
-
+        //https://reqres.in/api/users/
         [When(@"I call get method to get user information using (.*)")]
         public void WhenICallGetMethodToGetUserInformationUsingUser(string userId)
         {
@@ -43,6 +43,7 @@ namespace APIAutomationTestSuite.Steps
         public void ThenIWillGetUserInformation()
         {
             var response = RestApiHelper.GetResponse();
+            Assert.That(response.StatusCode, Is.EqualTo(200), "User not Found");
         }
 
         //http://mydomain.com/userinformation/userid/AccountInformation?account={accountNumber}

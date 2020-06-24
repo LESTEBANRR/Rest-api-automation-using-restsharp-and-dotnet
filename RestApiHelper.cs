@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,14 @@ namespace APIAutomationTestSuite
     {
         public static RestClient client;
         public static RestRequest restRequest;
-        public static string baseURL ="http://mydomain.com";
-
+        //public static string baseURL ="http://mydomain.com";
+        public static string baseURL = "https://reqres.in/";
+        //public static string baseURL = "https://pokeapi.co/api/"; // v2/pokemon/ditto
         public static RestClient SetUrl(string endpoint)
         {
-            var url = Path.Combine(baseURL, endpoint);
+            //string url = Path.Combine(baseURL, endpoint); // Only Return /endpoint/
+            string url = baseURL + endpoint;
+            Debug.Write(url);
             return client = new RestClient(url);
         }
 
@@ -47,12 +51,11 @@ namespace APIAutomationTestSuite
         public static RestRequest CreatePostRequest()
         {
             var userInfo = new UserInformation();
-            userInfo.FirstName = "Tej";
-            userInfo.LastName = "Pal";
-            userInfo.emailAddress = "Tej@mail.com";
-            userInfo.DateOfBirth = new DateTime(1998, 3, 16);
+            userInfo.first_name = "Tej";
+            userInfo.last_name = "Pal";
+            userInfo.email = "Tej@mail.com";
 
-            var resource = "/registration/";
+            var resource = "/users/";
             restRequest = new RestRequest(resource, Method.POST);
             restRequest.AddBody(userInfo);
             restRequest.AddHeader("Accept", "application/json");

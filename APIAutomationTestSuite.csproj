@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props')" />
   <Import Project="packages\SpecRun.Runner.3.3.14\build\SpecRun.Runner.props" Condition="Exists('packages\SpecRun.Runner.3.3.14\build\SpecRun.Runner.props')" />
   <Import Project="packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.props" Condition="Exists('packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.props')" />
   <Import Project="packages\SpecFlow.Tools.MsBuild.Generation.3.3.30\build\SpecFlow.Tools.MsBuild.Generation.props" Condition="Exists('packages\SpecFlow.Tools.MsBuild.Generation.3.3.30\build\SpecFlow.Tools.MsBuild.Generation.props')" />
@@ -147,6 +148,7 @@
     <Error Condition="!Exists('packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NET.Test.Sdk.15.0.0\build\net45\Microsoft.Net.Test.Sdk.targets'))" />
     <Error Condition="!Exists('packages\SpecRun.Runner.3.3.14\build\SpecRun.Runner.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SpecRun.Runner.3.3.14\build\SpecRun.Runner.props'))" />
     <Error Condition="!Exists('packages\SpecRun.Runner.3.3.14\build\SpecRun.Runner.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SpecRun.Runner.3.3.14\build\SpecRun.Runner.targets'))" />
+    <Error Condition="!Exists('packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
   <Import Project="packages\SpecFlow.3.3.30\build\SpecFlow.targets" Condition="Exists('packages\SpecFlow.3.3.30\build\SpecFlow.targets')" />
   <Import Project="packages\SpecFlow.NUnit.3.3.30\build\SpecFlow.NUnit.targets" Condition="Exists('packages\SpecFlow.NUnit.3.3.30\build\SpecFlow.NUnit.targets')" />
